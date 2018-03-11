@@ -14,9 +14,10 @@ const Meta = () => (
     <meta itemprop="name" content={title} />
     <meta itemprop="description" content={description} />
     <meta itemprop="image" content={image} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <meta name="og:title" content={title} />
     <meta name="og:description" content={description} />
     <meta name="og:type" content="website" />
