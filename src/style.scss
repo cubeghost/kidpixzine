@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'chicagoregular';
+  src: url(./fonts/chicago.woff2) format('woff2'), url(./fonts/chicago.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'chicagoregular', monospace;
+}
+
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+}
+
+
+$originalPageWidth:473;
+$originalPageHeight:279;
+$pageRatio:1;
+$pagePadding:20;
+$containerWidth:($originalPageWidth * $pageRatio * 2) + ($pagePadding * 4) + 3;
+
+
+.zine {
+  max-width:#{$containerWidth}px;
+  width:100%;
+  margin:calc(100vh - #{($originalPageHeight * $pageRatio) + ($pagePadding * 8)}px) auto #{$pagePadding * 2}px auto;
+  display:flex;
+  flex-wrap:wrap;
+
+  @media (max-width:#{$containerWidth + 1}px) {
+    padding:0 #{$pagePadding}px;
+  }
+}
+
+a {
+  color:#0000FF;
+}
+
+.zine-description {
+  flex:0 0 75%;
+  text-align:left;
+  font-size:13px;
+
+  p {
+    margin:0.5em 0;
+  }
+}
+
+.zine-page {
+  display:block;
+  padding:#{$pagePadding}px;
+  border:1px solid #000;
+  margin-bottom:#{$pagePadding * 2}px;
+  -ms-interpolation-mode:nearest-neighbor;
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:-moz-crisp-edges;
+  image-rendering:pixelated;
+  flex:0 0 100%;
+
+  @media (min-width:#{$containerWidth}px) {
+    flex:0 0 40%;
+
+    &:first-child {
+      margin-left:#{($originalPageWidth * $pageRatio) + ($pagePadding * 2) + 1}px;
+    }
+
+    &:nth-child(2n + 2) {
+      border-right-width:0;
+    }
+  }
+
+}
+
+.zine-page img {
+  width:#{$originalPageWidth * $pageRatio}px;
+  height:#{$originalPageHeight * $pageRatio}px;
+  margin:0 auto;
+  display:block;
+}

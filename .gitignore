@@ -1,0 +1,4 @@
+build
+public/index.html
+node_modules
+.env

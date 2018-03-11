@@ -1,0 +1,33 @@
+{
+  "name": "kidpixzine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --mode development --progress --watch",
+    "build": "webpack --mode production --progress",
+    "deploy": "aws s3 sync ./public s3://bldwn.co/kidpix/zine --exclude \".DS_Store\""
+  },
+  "author": "Alex Baldwin <alex@bldwn.co> (http://bldwn.co/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "left-pad": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "sass-loader": "^6.0.7",
+    "static-site-generator-webpack-plugin": "^3.4.1",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-delete-after-emit": "^1.0.5"
+  }
+}
